@@ -48,9 +48,9 @@ const ProductList = () => {
         }
     }, [onSendData])
 
-    function RedirectExample() {
-        alert(window.location.toString())
-        window.location.replace('https://ya.ru');
+    function RedirectExample(product) {
+        alert(window.location.toString() + product.id.toString());
+        window.location.replace(window.location.toString() + product.id.toString());
     }
 
 
