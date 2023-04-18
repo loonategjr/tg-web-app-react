@@ -20,13 +20,10 @@ function App() {
             <Routes>
                 <Route index element={<ProductList />}/>
                 <Route path={'form'} element={<Form />}/>
-                
+
                 <Route path={'1'} element={'Страница первого товара'}/>
-                <Route path={'2'} element={<ProductItem
-                    product={item}
-                    onAdd={redirect}
-                    className={'item'}
-                />}/>
+                <Route path={'2'} element={'Страница второго товара'}/>
+
             </Routes>
         </div>
     );
