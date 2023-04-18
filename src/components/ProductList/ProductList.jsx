@@ -48,9 +48,17 @@ const ProductList = () => {
         }
     }, [onSendData])
 
-    const onAdd = (product) => {
-        alert(this.props.history.toString())
-        this.props.history.push('test');
+    function RedirectExample() {
+        useEffect(() => {
+            const timeout = setTimeout(() => {
+                // 👇️ redirects to an external URL
+                window.location.replace('https://ya.ru');
+            }, 3000);
+
+            return () => clearTimeout(timeout);
+        }, []);
+
+        return <>Will redirect in 3 seconds...</>;
     }
 
 
@@ -81,7 +89,7 @@ const ProductList = () => {
             {products.map(item => (
                 <ProductItem
                     product={item}
-                    onAdd={onAdd}
+                    onAdd={RedirectExample}
                     className={'item'}
                 />
             ))}
