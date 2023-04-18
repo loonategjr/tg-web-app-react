@@ -3,6 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -48,6 +49,15 @@ const ProductList = () => {
     }, [onSendData])
 
     const onAdd = (product) => {
+        const navigate = useNavigate();
+
+        useEffect(() => {
+
+            navigate("/test");
+        }, []);    }
+
+
+    const onAd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
@@ -83,3 +93,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
