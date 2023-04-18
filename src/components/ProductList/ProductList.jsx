@@ -50,17 +50,8 @@ const ProductList = () => {
 
     function RedirectExample() {
         alert('1');
-        useEffect(() => {
-            alert('2');
-            const timeout = setTimeout(() => {
-                // 👇️ redirects to an external URL
-                window.location.replace('https://ya.ru');
-            }, 3000);
-
-            return () => clearTimeout(timeout);
-        }, []);
-
-        return <>Will redirect in 3 seconds...</>;
+        window.location.replace('https://ya.ru');
+        alert('2');
     }
 
 
