@@ -49,8 +49,8 @@ const ProductList = () => {
     }, [onSendData])
 
     const onAdd = (product) => {
-        alert("i'm here")
-        this.props.history.push('/test');
+        alert(this.props.history.toString())
+        this.props.history.push('test');
     }
 
 
