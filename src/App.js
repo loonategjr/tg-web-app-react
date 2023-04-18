@@ -19,7 +19,8 @@ function App() {
             <Routes>
                 <Route index element={<ProductList />}/>
                 <Route path={'form'} element={<Form />}/>
-                <Route path={'test'} element={'hello'}/>
+                <Route path={'1'} element={'Страница первого товара'}/>
+                <Route path={'2'} element={'Страница второго товара'}/>
             </Routes>
         </div>
     );
