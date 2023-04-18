@@ -49,12 +49,14 @@ const ProductList = () => {
     }, [onSendData])
 
     const onAdd = (product) => {
+        alert("i'm here")
         const navigate = useNavigate();
 
         useEffect(() => {
 
             navigate("/test");
-        }, []);    }
+        }, []);    
+    }
 
 
     const onAd = (product) => {
