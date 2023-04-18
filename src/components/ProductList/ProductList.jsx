@@ -49,7 +49,9 @@ const ProductList = () => {
     }, [onSendData])
 
     function RedirectExample() {
+        alert('1');
         useEffect(() => {
+            alert('2');
             const timeout = setTimeout(() => {
                 // 👇️ redirects to an external URL
                 window.location.replace('https://ya.ru');
