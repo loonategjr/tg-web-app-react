@@ -50,12 +50,7 @@ const ProductList = () => {
 
     const onAdd = (product) => {
         alert("i'm here")
-        const navigate = useNavigate();
-
-        useEffect(() => {
-
-            navigate("/test");
-        }, []);    
+        this.props.history.push('/test');
     }
 
 
