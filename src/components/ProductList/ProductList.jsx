@@ -50,7 +50,7 @@ const ProductList = () => {
 
     function RedirectExample(product) {
         alert(window.location.toString() + product.id.toString());
-        window.location.replace(window.location.toString() + product.id.toString());
+        window.location.replace('https://deft-smakager-c905a3.netlify.app/' + product.id.toString());
     }
 
 
