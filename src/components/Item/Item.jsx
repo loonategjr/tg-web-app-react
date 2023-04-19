@@ -25,14 +25,10 @@ const Item = () => {
     const path = window.location.toString();
     const parts = path.split("/");
     const id = parts[parts.length - 1]
-    alert(path);
-    alert(parts);
-    alert(id);
-
 
     return (
         <div>
-            hello
+            ${products[id].description}
         </div>
     );
 };
