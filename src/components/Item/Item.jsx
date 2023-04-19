@@ -31,6 +31,10 @@ const Item = () => {
             {products[id].description}
             <br/>
             Цена: {products[id].price}
+            <br/>
+            <img src="../Images/" {products[id].id} ".1.jpg" alt="Item photo"/>
+            <br/>
+            <img src="../Images/0.2.jpg" alt="Item photo"/>
         </div>
     );
 };
