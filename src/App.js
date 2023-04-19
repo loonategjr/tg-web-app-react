@@ -5,10 +5,11 @@ import Header from "./components/Header/Header";
 import {Route, Routes} from 'react-router-dom'
 import ProductList from "./components/ProductList/ProductList";
 import Form from "./components/Form/Form";
+import Item from "./components/Item/Item";
 import ProductItem from "./components/ProductItem/ProductItem";
 
 function App() {
-    const {onToggleButton, tg} = useTelegram();
+    const {tg} = useTelegram();
 
     useEffect(() => {
         tg.ready();
@@ -21,8 +22,8 @@ function App() {
                 <Route index element={<ProductList />}/>
                 <Route path={'form'} element={<Form />}/>
 
-                <Route path={'1'} element={'Страница первого товара'}/>
-                <Route path={'2'} element={'Страница второго товара'}/>
+                <Route path={'1'} element={<Item />}/>
+                <Route path={'2'} element={'надо создать отдельный jsx файлик с импортом products из hooks и выводить описание, считывая конец url как id товара'}/>
 
             </Routes>
         </div>
