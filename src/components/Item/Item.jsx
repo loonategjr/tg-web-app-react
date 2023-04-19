@@ -32,9 +32,9 @@ const Item = () => {
             <br/>
             Цена: {products[id].price}
             <br/>
-            <img src="https://www.gstatic.com/webp/gallery/1.webp" alt="Item photo"/>
+            <img src="https://disk.yandex.ru/i/7L7a0T7gZK9LRg" alt="Item photo"/>
             <br/>
-            <img src="https://www.gstatic.com/webp/gallery/4.webp" alt="Item photo"/>
+            <img src="https://2.downloader.disk.yandex.ru/preview/3b06236ddf25f65209befe5b698f11e60efec98e74ae532c77788970029fe1cf/inf/S3xxH6e4jDL4D6l3nSchZAgNDlNgZwhGg6Ns1edFQ4SRkh-IarjiCS-O6k2xRWHEjfj3xSd5Jst5ZweoK2JQDA%3D%3D?uid=561268315&filename=0.1.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=561268315&tknv=v2&size=2850x1642" alt="Item photo"/>
         </div>
     );
 };
