@@ -22,7 +22,7 @@ export function useTelegram() {
     }
     const onClose = () => {
         alert(cururl);
-        if (cururl === "https://deft-smakager-c905a3.netlify.app") {
+        if (cururl === "https://deft-smakager-c905a3.netlify.app/") {
             tg.close;
         } else {
             window.location.replace(newurl);
