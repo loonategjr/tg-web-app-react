@@ -14,15 +14,19 @@ const products = [
 
 export function useTelegram() {
 
-    const str = window.location.toString();
-    const str1 = str.split("/");
-    let res = "";
-    for (let i = 0 ; i < str1.length - 1 ; i++) {
-        res += str1[i] + "/";
+    const cururl = window.location.toString();
+    const cururls = cururl.split("/");
+    let newurl = "";
+    for (let i = 0 ; i < cururls.length - 1 ; i++) {
+        newurl += cururls[i] + "/";
     }
     const onClose = () => {
-        alert(res);
-        tg.close();
+        alert(cururl);
+        if (cururl === "https://deft-smakager-c905a3.netlify.app") {
+            tg.close;
+        } else {
+            window.location.replace(newurl);
+        }
     }
 
     const onToggleButton = () => {
