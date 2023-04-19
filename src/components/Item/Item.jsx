@@ -1,13 +1,12 @@
 import React from 'react';
-import Button from "../Button/Button";
-import './ProductItem.css';
+import './Item.css';
+import '../../hooks/useTelegram'
+import {useTelegram} from "../../hooks/useTelegram";
 
-const ProductItem = ({product, className, onAdd}) => {
+const {products} = useTelegram();
 
-    const onAddHandler = () => {
-        onAdd(product);
-    }
-
+/*
+const Item = ({product, className}) => {
     return (
         <div className={'product ' + className}>
             <div className={'img'}/>
@@ -16,11 +15,28 @@ const ProductItem = ({product, className, onAdd}) => {
             <div className={'price'}>
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
-            <Button className={'add-btn'} onClick={onAddHandler}>
-                Открыть страницу товара
-            </Button>
         </div>
     );
 };
 
-export default ProductItem;
+ */
+
+const Item = () => {
+    const path = window.location.toString();
+    const parts = path.split("/");
+    const id = parts[parts.length - 1]
+
+    return (
+        <div>
+            {products[id].description}
+            <br/>
+            Цена: {products[id].price}
+            <br/>
+            <img src="https://www.gstatic.com/webp/gallery/1.webp" alt="Item photo"/>
+            <br/>
+            <img src="https://www.gstatic.com/webp/gallery/4.webp" alt="Item photo"/>
+        </div>
+    );
+};
+
+export default Item;
