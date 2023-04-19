@@ -32,9 +32,9 @@ const Item = () => {
             <br/>
             Цена: {products[id].price}
             <br/>
-            <img src="https://www.gstatic.com/webp/gallery/1.webp" alt="Item photo"/>
+            <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
             <br/>
-            <img src="https://www.gstatic.com/webp/gallery/4.webp" alt="Item photo"/>
+            <img src="https://lh3.googleusercontent.com/hHnJT063STIqz9H65HIrOY8U6s82BWkQdvqLMTGOdm6j2mFJpwFGAP1gynWidcB10dFYw_DIqvWEw1Z5kPrwzw3feLt09g2jPRQtOxaigG9dMcRI6472vTDqhwEf7kHt6blI001sSg=w2400" alt="Item photo"/>
         </div>
     );
 };
