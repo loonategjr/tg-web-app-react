@@ -14,7 +14,6 @@ const products = [
 
 export function useTelegram() {
 
-    window.location.replace('https://deft-smakager-c905a3.netlify.app/' + product.id.toString());
     const str = window.location.toString();
     const str1 = str.split("/");
     let res = "";
