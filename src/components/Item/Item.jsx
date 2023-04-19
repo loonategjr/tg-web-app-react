@@ -32,9 +32,9 @@ const Item = () => {
             <br/>
             Цена: {products[id].price}
             <br/>
-            <img src="https://github.com/loonategjr/tg-web-app-react/blob/master/src/components/Images/0.1.jpg" alt="Item photo"/>
+            <img src="https://www.gstatic.com/webp/gallery/1.webp" alt="Item photo"/>
             <br/>
-            <img src="https://github.com/loonategjr/tg-web-app-react/blob/master/src/components/Images/0.2.jpg" alt="Item photo"/>
+            <img src="https://www.gstatic.com/webp/gallery/4.webp" alt="Item photo"/>
         </div>
     );
 };
