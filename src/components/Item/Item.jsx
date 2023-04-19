@@ -28,7 +28,9 @@ const Item = () => {
 
     return (
         <div>
-            ${products[id].description}
+            {products[id].description}
+            <br/>
+            Цена: {products[id].price}
         </div>
     );
 };
