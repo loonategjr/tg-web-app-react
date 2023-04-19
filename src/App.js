@@ -21,9 +21,14 @@ function App() {
             <Routes>
                 <Route index element={<ProductList />}/>
                 <Route path={'form'} element={<Form />}/>
-
+                <Route path={'0'} element={<Item />}/>
                 <Route path={'1'} element={<Item />}/>
-                <Route path={'2'} element={'надо создать отдельный jsx файлик с импортом products из hooks и выводить описание, считывая конец url как id товара'}/>
+                <Route path={'2'} element={<Item />}/>
+                <Route path={'3'} element={<Item />}/>
+                <Route path={'4'} element={<Item />}/>
+                <Route path={'5'} element={<Item />}/>
+                <Route path={'6'} element={<Item />}/>
+                <Route path={'7'} element={<Item />}/>
 
             </Routes>
         </div>
