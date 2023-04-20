@@ -44,13 +44,20 @@ const ProductList = () => {
  */
 
     // тут надо сделать так, чтоб переход был от данного url к нему же + айди продукта
+
+    const path = window.location.toString();
+    const parts = path.split("/");
+    const brandid = parts[parts.length - 1];
+
     function redirect(product) {
         window.location.replace(window.location.toString() + "/" + product.id.toString());
     }
 
+    // тут надо сделать product двумерным массивом и поставить индекс id к нему
+
     return (
         <div className={'list'}>
-            {products.map(item => (
+            {products[brandid].map(item => (
                 <ProductItem
                     product={item}
                     onAdd={redirect}
