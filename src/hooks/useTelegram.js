@@ -29,11 +29,8 @@ export function useTelegram() {
     const cururls = cururl.split("/");
     let newurl = "";
     for (let i = 0 ; i < cururls.length - 1 ; i++) {
-        if (i === cururls.length - 1) {
+        if (i === cururls.length - 2) {
             newurl += cururls[i]
-            if (newurl[newurl.length - 1] === '/') {
-                newurl[newurl.length - 1] = '';
-            }
         } else {
             newurl += cururls[i] + "/";
         }
