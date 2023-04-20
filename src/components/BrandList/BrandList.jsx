@@ -54,7 +54,7 @@ const BrandList = () => {
         <div className={'list'}>
             {brands.map(item => (
                 <Brand
-                    product={item}
+                    brand={item}
                     onAdd={redirect}
                     className={'item'}
                 />
