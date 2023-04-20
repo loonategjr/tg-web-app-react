@@ -13,9 +13,6 @@ const Brand = ({brand, className, onAdd}) => {
             <div className={'img'}/>
             <div className={'title'}>{brand.title}</div>
             <div className={'description'}>{brand.description}</div>
-            <div className={'price'}>
-                <span>Стоимость: <b>{brand.price}</b></span>
-            </div>
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Открыть страницу бренда
             </Button>
