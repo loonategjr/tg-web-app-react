@@ -11,6 +11,17 @@ const products = [
     {id: '7', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
 ]
 
+const brands = [
+    {id: '0', title: 'бренд1', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '1', title: 'бренд2', price: 12000, description: 'Зеленого цвета, теплая'},
+    {id: '2', title: 'бренд3', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '3', title: 'бренд4', price: 122, description: 'Зеленого цвета, теплая'},
+    {id: '4', title: 'бренд5', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '5', title: 'бренд6', price: 600, description: 'Зеленого цвета, теплая'},
+    {id: '6', title: 'бренд7', price: 5500, description: 'Синего цвета, прямые'},
+    {id: '7', title: 'бренд8', price: 12000, description: 'Зеленого цвета, теплая'},
+]
+
 
 export function useTelegram() {
 
@@ -37,6 +48,7 @@ export function useTelegram() {
         onToggleButton,
         tg,
         products,
+        brands,
         user: tg.initDataUnsafe?.user,
         queryId: tg.initDataUnsafe?.query_id,
     }
