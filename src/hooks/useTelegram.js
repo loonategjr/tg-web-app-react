@@ -33,10 +33,7 @@ export function useTelegram() {
             newurl += cururls[i]
         } else {
             newurl += cururls[i] + "/";
-        }
-        if (newurl[newurl.length - 1] === "/") {
-            newurl[newurl.length - 1] = '';
-        } 
+        }        
     }
 
     const onClose = () => {
