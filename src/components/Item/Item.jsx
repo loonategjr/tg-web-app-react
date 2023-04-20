@@ -25,12 +25,15 @@ const Item = () => {
     const path = window.location.toString();
     const parts = path.split("/");
     const id = parts[parts.length - 1]
+    const brandid = parts[parts.length - 2]
+
+    // тут надо поменять products на двумерный массив и поменять индексы
 
     return (
         <div>
-            {products[id].description}
+            {products[brandid][id].description}
             <br/>
-            Цена: {products[id].price}
+            Цена: {products[brandid][id].price}
             <br/>
             <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
             <br/>
