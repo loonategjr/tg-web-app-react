@@ -20,7 +20,11 @@ function App() {
             <Routes>
                 <Route index element={<BrandList />}/>
                 <Route path={'form'} element={<Form />}/>
-                
+                <Route path={'0'} element={<ProductList />}/>
+                <Route path={'1'} element={<ProductList />}/>
+
+
+
 
 
             </Routes>
