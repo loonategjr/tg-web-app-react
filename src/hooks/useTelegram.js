@@ -37,8 +37,6 @@ export function useTelegram() {
     }
 
     const onClose = () => {
-        alert(cururls);
-        alert()
         window.location.replace(newurl);
     }
 
