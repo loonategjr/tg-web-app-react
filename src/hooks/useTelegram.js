@@ -31,12 +31,17 @@ export function useTelegram() {
     for (let i = 0 ; i < cururls.length - 1 ; i++) {
         if (i === cururls.length - 1) {
             newurl += cururls[i]
+            if (newurl[newurl.length - 1] === '/') {
+                newurl[newurl.length - 1] = '';
+            }
         } else {
             newurl += cururls[i] + "/";
-        }        
+        }
     }
 
     const onClose = () => {
+        alert(cururls);
+        alert()
         window.location.replace(newurl);
     }
 
