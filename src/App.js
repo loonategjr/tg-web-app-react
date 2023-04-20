@@ -22,11 +22,10 @@ function App() {
                 <Route path={'form'} element={<Form />}/>
                 <Route path={'0'} element={<ProductList />}/>
                 <Route path={'1'} element={<ProductList />}/>
-
-
-
-
-
+                <Route path={'0/0'} element={<Item />}/>
+                <Route path={'0/1'} element={<Item />}/>
+                <Route path={'1/0'} element={<Item />}/>
+                <Route path={'1/1'} element={<Item />}/>
             </Routes>
         </div>
     );
