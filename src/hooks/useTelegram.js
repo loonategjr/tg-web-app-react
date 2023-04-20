@@ -12,8 +12,8 @@ const products = [
 ]
 
 const brands = [
-    {id: '0', title: 'бренд1', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '1', title: 'бренд2', price: 12000, description: 'Зеленого цвета, теплая'},
+    {id: '0', title: 'бренд1', description: 'Очень хороший'},
+    {id: '1', title: 'бренд2', description: 'Мегахороший'},
 ]
 
 
@@ -30,7 +30,7 @@ export function useTelegram() {
         }
     }
 
-    const onClose = () => {    
+    const onClose = () => {
         window.location.replace(newurl);
     }
 
