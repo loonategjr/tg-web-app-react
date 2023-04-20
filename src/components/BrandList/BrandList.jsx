@@ -47,7 +47,6 @@ const BrandList = () => {
 
 
     function redirect(brand) {
-        alert(window.location.toString());
         window.location.replace('https://deft-smakager-c905a3.netlify.app/' + brand.id.toString());
     }
 
