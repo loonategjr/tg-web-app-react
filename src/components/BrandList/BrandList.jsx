@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './ProductList.css';
+import './BrandList.css';
 import Brand from "../Brand/Brand";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
@@ -43,7 +43,7 @@ const BrandList = () => {
 
  */
 
-    window.location.replace('https://deft-smakager-c905a3.netlify.app/');
+    //window.location.replace('https://deft-smakager-c905a3.netlify.app/');
 
 
     function redirect(brand) {
