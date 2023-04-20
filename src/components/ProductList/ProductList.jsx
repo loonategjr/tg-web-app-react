@@ -45,6 +45,7 @@ const ProductList = () => {
 
     // тут надо сделать так, чтоб переход был от данного url к нему же + айди продукта
     function redirect(product) {
+        alert(window.location.toString());
         window.location.replace('https://deft-smakager-c905a3.netlify.app/' + product.id.toString());
     }
 
