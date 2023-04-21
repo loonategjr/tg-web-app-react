@@ -16,7 +16,7 @@ const Item = () => {
 
     let newItem = products[brandid][id];
 
-    
+
     /*
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
@@ -41,8 +41,11 @@ const Item = () => {
 
 
     const onAdd = () => {
+        
+        /*
         setDescription(products[brandid][id].description);
-        setPrice(products[brandid][id].price);
+        setPrice(products[brandid][id].price);      
+         */
 
         tg.MainButton.show();
         tg.MainButton.setParams({
