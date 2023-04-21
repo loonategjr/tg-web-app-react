@@ -70,6 +70,9 @@ const Item = () => {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
+            alert(getTotalPrice(newItems));
+            alert(tg.MainButton.text);
+            alert(parseInt(tg.MainButton.text, 10));
             tg.MainButton.setParams({
                 text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
             })
