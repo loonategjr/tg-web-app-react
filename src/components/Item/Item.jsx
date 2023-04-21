@@ -17,12 +17,15 @@ const Item = () => {
     let newItem = products[brandid][id];
 
 
-    
+
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
+    const [title, setTitle] = useState('');
+
 
     const onSendData = useCallback(() => {
         const data = {
+            title,
             description,
             price
         }
@@ -35,17 +38,17 @@ const Item = () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
-     
+
 
 
 
 
     const onAdd = () => {
 
-        
+        setTitle(products[brandid][id].title);
         setDescription(products[brandid][id].description);
         setPrice(products[brandid][id].price);
-         
+
 
         tg.MainButton.show();
         tg.MainButton.setParams({
