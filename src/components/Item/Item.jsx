@@ -9,7 +9,7 @@ const {products} = useTelegram();
 
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
-        return acc += item.price
+        return item.price
     }, 0)
 }
 
@@ -66,23 +66,11 @@ const Item = () => {
 
         setAddedItems(newItems)
 
-        if (tg.MainButton.isVisible === false) {
-            alert("hello");
-            alert(tg.MainButton.isActive);
-            alert(tg.MainButton.isProgressVisible);
-            tg.MainButton.show();
-        }
-        alert(tg.MainButton.text);
-        alert(parseInt(tg.MainButton.text, 10));
-        if (tg.MainButton.text === "CONTINUE") {
-            tg.MainButton.setParams({
-                text: `${getTotalPrice(newItems)}`
-            })
-        } else {
-            tg.MainButton.setParams({
-                text: `${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
-            })
-        }
+        tg.MainButton.show();
+        tg.MainButton.setParams({
+            text: `Заказать ${getTotalPrice(newItems)}`
+        })
+        alert(addedItems);
 
     }
 
