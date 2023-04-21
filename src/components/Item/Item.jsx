@@ -22,16 +22,17 @@ const Item = () => {
     const parts = path.split("/");
     const id = parts[parts.length - 1]
     const brandid = parts[parts.length - 2]
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     let newItem = products[brandid][id];
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
+        alert("im here");
         const data = {
             products: newItem,
             totalPrice: newItem.price,
@@ -66,11 +67,6 @@ const Item = () => {
     }
 
     
-
-
-    const hello = () => {
-        alert("i'm pressed!");
-    }
 
     return (
         <div>
