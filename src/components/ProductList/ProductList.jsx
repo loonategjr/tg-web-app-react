@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
-const {products} = useTelegram();
+const {products, tg} = useTelegram();
 const ProductList = () => {
 
     tg.MainButton.hide();
