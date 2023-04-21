@@ -66,22 +66,20 @@ const Item = () => {
 
         setAddedItems(newItems)
 
-        if(newItems.length === 0) {
-            tg.MainButton.hide();
+
+        tg.MainButton.show();
+        alert(tg.MainButton.text);
+        alert(parseInt(tg.MainButton.text, 10));
+        if (tg.MainButton.text === "CONTINUE") {
+            tg.MainButton.setParams({
+                text: `Купить ${getTotalPrice(newItems)}`
+            })
         } else {
-            tg.MainButton.show();
-            alert(tg.MainButton.text);
-            alert(parseInt(tg.MainButton.text, 10));
-            if (tg.MainButton.text === "CONTINUE") {
-                tg.MainButton.setParams({
-                    text: `Купить ${getTotalPrice(newItems)}`
-                })
-            } else {
-                tg.MainButton.setParams({
-                    text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
-                })
-            }
+            tg.MainButton.setParams({
+                text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
+            })
         }
+        
     }
 
 
