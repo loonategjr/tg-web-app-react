@@ -74,11 +74,11 @@ const Item = () => {
         alert(parseInt(tg.MainButton.text, 10));
         if (tg.MainButton.text === "CONTINUE") {
             tg.MainButton.setParams({
-                text: `Купить ${getTotalPrice(newItems)}`
+                text: `${getTotalPrice(newItems)}`
             })
         } else {
             tg.MainButton.setParams({
-                text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
+                text: `${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
             })
         }
 
