@@ -66,8 +66,9 @@ const Item = () => {
 
         setAddedItems(newItems)
 
-
-        tg.MainButton.show();
+        if (tg.MainButton.isVisible === false) {
+            tg.MainButton.show();
+        }
         alert(tg.MainButton.text);
         alert(parseInt(tg.MainButton.text, 10));
         if (tg.MainButton.text === "CONTINUE") {
@@ -79,7 +80,7 @@ const Item = () => {
                 text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
             })
         }
-        
+
     }
 
 
