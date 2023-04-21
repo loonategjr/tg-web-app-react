@@ -22,20 +22,19 @@ const Item = () => {
     const parts = path.split("/");
     const id = parts[parts.length - 1]
     const brandid = parts[parts.length - 2]
-
-
-
-
-
-
-
-    const [addedItems, setAddedItems] = useState([]);
+    
+    
+    
+    
+    
+    
+    let newItem = products[brandid][id];
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
+            products: newItem,
+            totalPrice: newItem.price,
             queryId,
         }
         fetch('http://85.119.146.179:8000/web-data', {
@@ -45,7 +44,7 @@ const Item = () => {
             },
             body: JSON.stringify(data)
         })
-    }, [addedItems])
+    }, [])
 
 
 
@@ -59,23 +58,14 @@ const Item = () => {
 
 
 
-    const onAdd = (product) => {
-
-        let newItems = [product];
-        
-        alert(newItems[0].description);
-
+    const onAdd = () => {
         tg.MainButton.show();
         tg.MainButton.setParams({
-            text: `Заказать ${getTotalPrice(newItems)}`
+            text: `Заказать ${newItem.price}`
         })
     }
 
-
-
-    const onAddHandler = () => {
-        onAdd(products[brandid][id])
-    }
+    
 
 
     const hello = () => {
@@ -86,7 +76,7 @@ const Item = () => {
         <div>
             Описание {products[brandid][id].description} <br/>
             Цена: {products[brandid][id].price} <br/>
-            <Button onClick={onAddHandler}>
+            <Button onClick={onAdd}>
                 Добавить в корзину
             </Button> <br/>
             <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
