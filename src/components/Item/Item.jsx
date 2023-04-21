@@ -29,6 +29,7 @@ const Item = () => {
 
 
 
+    const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
@@ -60,13 +61,11 @@ const Item = () => {
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
-        let newItems = [];
+        
+        let newItems = [...addedItems, product];
 
-        
-        newItems = [product];
-        
-        alert(product);
-        
+        setAddedItems(newItems)
+
         tg.MainButton.show();
         tg.MainButton.setParams({
             text: `Заказать ${getTotalPrice(newItems)}`
