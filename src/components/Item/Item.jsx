@@ -5,8 +5,6 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const {products} = useTelegram();
 
-
-
 /*
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
@@ -43,7 +41,6 @@ const getTotalPrice = (items = []) => {
 */
 
 
-
 const Item = () => {
     const path = window.location.toString();
     const parts = path.split("/");
@@ -51,12 +48,10 @@ const Item = () => {
     const brandid = parts[parts.length - 2]
 
     return (
-        <div className={'product ' + className}>
+        <div>
             {products[brandid][id].description}
             <br/>
-            <div className={'price'}>
-                <span>Стоимость: <b>{products[brandid][id].price}</b></span>
-            </div>
+            Цена: {products[brandid][id].price}
             <br/>
             <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
             <br/>
