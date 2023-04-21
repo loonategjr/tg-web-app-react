@@ -61,10 +61,7 @@ const Item = () => {
             <div className={'description'}>{products[brandid][id].description}</div>
             <div className={'price'}>
                 <span>Стоимость: <b>{products[brandid][id].price}</b></span>
-            </div>
-            <Button className={'add-btn'} onClick={onAddHandler}>
-                Добавить в корзину
-            </Button>
+            </div>          
             <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
             <img src="https://lh3.googleusercontent.com/hHnJT063STIqz9H65HIrOY8U6s82BWkQdvqLMTGOdm6j2mFJpwFGAP1gynWidcB10dFYw_DIqvWEw1Z5kPrwzw3feLt09g2jPRQtOxaigG9dMcRI6472vTDqhwEf7kHt6blI001sSg=w2400" alt="Item photo"/>
         </div>
