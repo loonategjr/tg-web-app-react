@@ -68,6 +68,8 @@ const Item = () => {
 
         if (tg.MainButton.isVisible === false) {
             alert("hello");
+            alert(tg.MainButton.isActive);
+            alert(tg.MainButton.isProgressVisible);
             tg.MainButton.show();
         }
         alert(tg.MainButton.text);
