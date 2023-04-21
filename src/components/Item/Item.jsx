@@ -1,7 +1,6 @@
 import React from 'react';
 import './Item.css';
 import '../../hooks/useTelegram'
-import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 
 const {products} = useTelegram();
@@ -51,18 +50,16 @@ const Item = () => {
     const id = parts[parts.length - 1]
     const brandid = parts[parts.length - 2]
 
-    const onAddHandler = () => {
-        alert("pressed!");
-    }
-
     return (
         <div className={'product ' + className}>
-            <div className={'title'}>{products[brandid][id].title}</div>
-            <div className={'description'}>{products[brandid][id].description}</div>
+            {products[brandid][id].description}
+            <br/>
             <div className={'price'}>
                 <span>Стоимость: <b>{products[brandid][id].price}</b></span>
-            </div>          
+            </div>
+            <br/>
             <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
+            <br/>
             <img src="https://lh3.googleusercontent.com/hHnJT063STIqz9H65HIrOY8U6s82BWkQdvqLMTGOdm6j2mFJpwFGAP1gynWidcB10dFYw_DIqvWEw1Z5kPrwzw3feLt09g2jPRQtOxaigG9dMcRI6472vTDqhwEf7kHt6blI001sSg=w2400" alt="Item photo"/>
         </div>
     );
