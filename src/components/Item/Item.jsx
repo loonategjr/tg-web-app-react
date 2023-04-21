@@ -47,6 +47,9 @@ const Item = () => {
         })
     }, [addedItems])
 
+    
+    
+    
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
@@ -54,6 +57,8 @@ const Item = () => {
         }
     }, [onSendData])
 
+    
+    
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
@@ -66,12 +71,13 @@ const Item = () => {
 
         setAddedItems(newItems)
 
+        alert(newItems);
+        alert(addedItems);
+        
         tg.MainButton.show();
         tg.MainButton.setParams({
             text: `Заказать ${getTotalPrice(newItems)}`
         })
-        alert(addedItems);
-
     }
 
 
