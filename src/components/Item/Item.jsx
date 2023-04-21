@@ -70,6 +70,8 @@ const Item = () => {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
+            alert(tg.MainButton.text);
+            alert(parseInt(tg.MainButton.text, 10));
             if (tg.MainButton.text === "CONTINUE") {
                 tg.MainButton.setParams({
                     text: `Купить ${getTotalPrice(newItems)}`
@@ -79,14 +81,13 @@ const Item = () => {
                     text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
                 })
             }
-            
         }
     }
 
 
 
     const onAddHandler = () => {
-        onAdd(products[brandid][id]);
+        onAdd(products[brandid][id])
     }
 
 
