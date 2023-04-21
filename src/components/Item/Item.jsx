@@ -44,20 +44,20 @@ const Item = () => {
 
     const onSendData = useCallback(() => {
         const data = {
-            description,
-            price
+            description: products[brandid][id].description,
+            price: products[brandid][id].price
         }
         tg.sendData(JSON.stringify(data));
-    }, [description, price])
+    }, [])
 
-    
+
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
-    
+
 
 
 
