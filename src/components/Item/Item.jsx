@@ -18,11 +18,12 @@ const Item = () => {
     let newItem = products[brandid][id];
     const {tg, queryId} = useTelegram();
 
+    /*
     const onSendData = useCallback(() => {
         alert("im here");
         // выводим форму
 
-        
+
         const data = {
             products: newItem,
             totalPrice: newItem.price,
@@ -36,25 +37,34 @@ const Item = () => {
             body: JSON.stringify(data)
         })
 
-         
+
     }, [])
+     */
 
 
+    const onSendData = useCallback(() => {
+        const data = {
+            description,
+            price
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [description, price])
 
-
+    
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
+    
 
 
 
     const onAdd = () => {
         tg.MainButton.show();
         tg.MainButton.setParams({
-            text: `Заполнить личные данные и заказать ${newItem.price}`
+            text: `Заполнить личные данные и заказать товар на сумму ${newItem.price}`
         })
     }
 
