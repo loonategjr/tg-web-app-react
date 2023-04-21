@@ -67,6 +67,7 @@ const Item = () => {
         setAddedItems(newItems)
 
         if (tg.MainButton.isVisible === false) {
+            alert("hello");
             tg.MainButton.show();
         }
         alert(tg.MainButton.text);
