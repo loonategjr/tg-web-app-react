@@ -7,16 +7,6 @@ import Button from "../Button/Button";
 const {products} = useTelegram();
 
 
-const getTotalPrice = (items = []) => {
-    return items.reduce((acc, item) => {
-        return item.price
-    }, 0)
-}
-
-
-
-
-
 const Item = () => {
     const path = window.location.toString();
     const parts = path.split("/");
@@ -25,14 +15,14 @@ const Item = () => {
 
 
 
-
-
-
     let newItem = products[brandid][id];
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
         alert("im here");
+        // выводим форму
+
+        
         const data = {
             products: newItem,
             totalPrice: newItem.price,
@@ -45,6 +35,8 @@ const Item = () => {
             },
             body: JSON.stringify(data)
         })
+
+         
     }, [])
 
 
@@ -62,18 +54,18 @@ const Item = () => {
     const onAdd = () => {
         tg.MainButton.show();
         tg.MainButton.setParams({
-            text: `Заказать ${newItem.price}`
+            text: `Заполнить личные данные и заказать ${newItem.price}`
         })
     }
 
-    
+
 
     return (
         <div>
             Описание {products[brandid][id].description} <br/>
             Цена: {products[brandid][id].price} <br/>
             <Button onClick={onAdd}>
-                Добавить в корзину
+                Купить
             </Button> <br/>
             <img src="https://lh3.googleusercontent.com/bWBkDLsyvvVNK0n4jt2IuRx_6-urGmUECt_acUUM7jRfS3iuQObAOBP0hSQ4r76VLmbi3aW8JH60Y28RKaUd7dUXywxFOkE_tBvUgbTnpAoYMCN06z-33D_TYZCuWqzQM2UdBCFBxg=w2400" alt="Item photo"/>
             <img src="https://lh3.googleusercontent.com/hHnJT063STIqz9H65HIrOY8U6s82BWkQdvqLMTGOdm6j2mFJpwFGAP1gynWidcB10dFYw_DIqvWEw1Z5kPrwzw3feLt09g2jPRQtOxaigG9dMcRI6472vTDqhwEf7kHt6blI001sSg=w2400" alt="Item photo"/>
