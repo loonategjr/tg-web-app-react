@@ -61,10 +61,8 @@ const Item = () => {
 
     const onAdd = (product) => {
 
-        let newItems = [...addedItems, product];
-
-        //setAddedItems(newItems)
-
+        let newItems = [product];
+        
         alert(newItems[0].description);
 
         tg.MainButton.show();
