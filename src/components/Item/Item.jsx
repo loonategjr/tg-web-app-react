@@ -11,11 +11,13 @@ const Item = () => {
     const id = parts[parts.length - 1]
     const brandid = parts[parts.length - 2]
 
+    const {tg, products} = useTelegram();
 
 
     let newItem = products[brandid][id];
-    const {tg, products} = useTelegram();
 
+    
+    /*
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
 
@@ -33,6 +35,7 @@ const Item = () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
+     */
 
 
 
