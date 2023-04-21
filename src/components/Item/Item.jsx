@@ -1,6 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './Item.css';
-import '../../hooks/useTelegram'
 import {useTelegram} from "../../hooks/useTelegram";
 import Button from "../Button/Button";
 
@@ -34,14 +33,14 @@ const Item = () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
-    
+
 
 
 
     const onAdd = () => {
         setDescription(products[brandid][id].description);
         setPrice(products[brandid][id].price);
-        
+
         tg.MainButton.show();
         tg.MainButton.setParams({
             text: `Заполнить данные и заказать товар на сумму ${newItem.price}`
