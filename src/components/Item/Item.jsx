@@ -71,7 +71,7 @@ const Item = () => {
         } else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${getTotalPrice(newItems) + Number(tg.MainButton.text)}`
+                text: `Купить ${getTotalPrice(newItems) + parseInt(tg.MainButton.text, 10)}`
             })
         }
     }
