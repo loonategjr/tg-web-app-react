@@ -64,8 +64,10 @@ const Item = () => {
         let newItems = [];
 
         if(alreadyAdded) {
+            alert("here");
             newItems = addedItems.filter(item => item.id !== product.id);
         } else {
+            alert("or here");
             newItems = [...addedItems, product];
         }
 
