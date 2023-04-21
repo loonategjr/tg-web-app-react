@@ -60,21 +60,12 @@ const Item = () => {
 
 
     const onAdd = (product) => {
-        const alreadyAdded = addedItems.find(item => item.id === product.id);
 
         let newItems = [...addedItems, product];
 
         setAddedItems(newItems)
-
-        alert(newItems);
-        
-        alert(newItems[0]);
         
         alert(newItems[0].description);
-        
-        alert(newItems.reduce((acc, item) => {
-            return item.description
-        }, 0));
 
         tg.MainButton.show();
         tg.MainButton.setParams({
