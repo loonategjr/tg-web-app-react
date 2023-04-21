@@ -63,8 +63,8 @@ const Item = () => {
 
         let newItems = [...addedItems, product];
 
-        setAddedItems(newItems)
-        
+        //setAddedItems(newItems)
+
         alert(newItems[0].description);
 
         tg.MainButton.show();
