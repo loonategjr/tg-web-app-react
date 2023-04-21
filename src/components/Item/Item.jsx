@@ -4,7 +4,6 @@ import '../../hooks/useTelegram'
 import {useTelegram} from "../../hooks/useTelegram";
 import Button from "../Button/Button";
 
-const {products} = useTelegram();
 
 
 const Item = () => {
@@ -16,40 +15,18 @@ const Item = () => {
 
 
     let newItem = products[brandid][id];
-    const {tg, queryId} = useTelegram();
+    const {tg, products} = useTelegram();
 
-    /*
-    const onSendData = useCallback(() => {
-        alert("im here");
-        // выводим форму
-
-
-        const data = {
-            products: newItem,
-            totalPrice: newItem.price,
-            queryId,
-        }
-        fetch('http://85.119.146.179:8000/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-
-
-    }, [])
-     */
-
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState('');
 
     const onSendData = useCallback(() => {
         const data = {
-            description: products[brandid][id].description,
-            price: products[brandid][id].price
+            description,
+            price
         }
         tg.sendData(JSON.stringify(data));
-    }, [])
-
+    }, [description, price])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -57,14 +34,17 @@ const Item = () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
-
+    
 
 
 
     const onAdd = () => {
+        setDescription(products[brandid][id].description);
+        setPrice(products[brandid][id].price);
+        
         tg.MainButton.show();
         tg.MainButton.setParams({
-            text: `Заполнить личные данные и заказать товар на сумму ${newItem.price}`
+            text: `Заполнить данные и заказать товар на сумму ${newItem.price}`
         })
     }
 
