@@ -3,25 +3,17 @@ import './Item.css';
 import {useTelegram} from "../../hooks/useTelegram";
 import Button from "../Button/Button";
 
-
-
 const Item = () => {
+    
+    const {tg, products} = useTelegram();
     const path = window.location.toString();
     const parts = path.split("/");
     const id = parts[parts.length - 1]
     const brandid = parts[parts.length - 2]
-
-    const {tg, products} = useTelegram();
-
-
     let newItem = products[brandid][id];
-
-
-
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [title, setTitle] = useState('');
-
 
     const onSendData = useCallback(() => {
         const data = {
@@ -39,24 +31,17 @@ const Item = () => {
         }
     }, [onSendData])
 
-
-
-
-
     const onAdd = () => {
 
         setTitle(products[brandid][id].title);
         setDescription(products[brandid][id].description);
         setPrice(products[brandid][id].price);
-
-
+        
         tg.MainButton.show();
         tg.MainButton.setParams({
-            text: `Заполнить данные и заказать товар на сумму ${newItem.price}`
+            text: `Заполнить данные и \nзаказать на сумму ${newItem.price}`
         })
     }
-
-
 
     return (
         <div>
