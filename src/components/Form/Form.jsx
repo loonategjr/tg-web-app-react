@@ -5,17 +5,15 @@ import {useTelegram} from "../../hooks/useTelegram";
 const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
-    const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
             country,
-            street,
-            subject
+            street
         }
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject])
+    }, [country, street])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -46,10 +44,6 @@ const Form = () => {
         setStreet(e.target.value)
     }
 
-    const onChangeSubject = (e) => {
-        setSubject(e.target.value)
-    }
-
     return (
         <div className={"form"}>
             <h3>Введите ваши данные</h3>
@@ -67,10 +61,6 @@ const Form = () => {
                 value={street}
                 onChange={onChangeStreet}
             />
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
-                <option value={'physical'}>Физ. лицо</option>
-                <option value={'legal'}>Юр. лицо</option>
-            </select>
         </div>
     );
 };
